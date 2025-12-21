@@ -1,0 +1,60 @@
+Git & GitHub - Day 03
+=========================
+GitHub?
+	GitHub is the place where we store the source code of the application - Developers point of view.
+
+	As a DevOps engineer, we will store Jenkinsfile, Dockerfile, docker-compose.yml, Kubernetes manifest files, Terraform files, Ansible yml files...
+
+GitHub is a cloud based server which is maintained by the GitHub organization
+GitHub Certifications;
+https://learn.github.com/certification/GHF
+
+GitHub consists of repositories (folders)
+
+Types of repositories based on visibility;
+	1. Public Repo	- anything that we store here will be visible and accessible to the public
+	2. Private Repo	- anything that we store here will be visible and accessible to the specific people
+
+A GitHub profile can be created to attract the recruiters
+
+Creating a GitHub account;
+https://github.com/
+
+For every repo, we will get a repo URL
+Repo URL will be in two forms;
+	1. HTTPS
+	2. SSH
+
+Pushing the code to remote repo;
+
+To configure the credentials, we will create PAT (Personal Access Token)
+
+
+Pulling the code from remote to local;
+git clone <RepoURL>
+
+Note: Whenever we clone any remote repo, we dont have to initialize git, because by default git will get initialized.
+
+GIT BRANCHES
+Git branches are used to isolate the code from different features of the application.
+In real-time, we will have separate branch for each feature of the application (OR) we might have a separate repo for each feature of the application
+
+We will have two branches by default;
+	1. master (git terminal)
+	2. main (GitHub repo)
+
+
+Note: When we initialize git in the local, we will have "master" as the default branch
+
+git branch
+
+Note: When we switch from existing branch to a newly created branch, whatever files that are available in the existing branch, all those files will get copied to the newly created branch (including the content)
+
+GIT IGNORE
+Here we will tell to git to ignore files which are mentioned in a special file known as ".gitignore"
+Whatever files that are mentioned in the .gitignore file, those files will not be available in the remote repo even if they are pushed to remote repo
+
+How to change the default branch?
+
+
+Renaming a branch

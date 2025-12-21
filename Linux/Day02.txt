@@ -1,0 +1,228 @@
+Module: Linux Fundamentals | Date: 14-11-2025 | Day 02
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+File Creation
+
+We can create files in 5 ways;
+1. touch
+2. vi
+3. cat
+4. nano
+5. echo
+
+1. touch - it is used to create an empty file
+touch <FileName>
+
+kastro1.java
+kastro2.java 
+kastro3.java
+.
+.
+.
+kastro10.java
+
+touch kastro{16..20}.net
+rm <FileName>
+
+To delete specific files with extension
+rm *.java
+
+To delete specific files with common name
+rm linux*
+
+To delete all the files in the current location
+rm -rf *
+
+How to identify whether it is a file or a directory
+If the starting character is "d" then it is a directory
+If the starting character is "-" then it is a file
+
+2. Using CAT command
+2.1. Write the data inside an existing file
+cat > kastro1.txt
+
+To come out of the file ---> control + c
+
+2.2. To see/verify the data inside a file
+cat kastro1.txt
+
+2.3. If we use "cat > kastro1.txt", if there is any data available that data will get overwritten i.e old data will be replaced with newly written data
+
+2.4. I want to preserve (append) the old data and also i want to write new data in the file
+cat >> kastro1.txt
+
+2.5. Create and write the data inside a file
+cat > linux.py
+Note: If "linux.py" file is not available, first the file gets created and then we can write the data
+
+3. Using VI/VIM command
+vi/vim is a Linux editor
+vi <FileName>
+Go to insert mode (press "i")
+Write the data
+Come out of the insert mode (press "esc")
+To save and come out of the file (:wq) ----> Hit "enter" button
+
+Note: if we use :q!, you will quit from the file without saving the data
+
+3.2. Creating and writing the data inside a file
+vi <FileName>
+
+4. Using "ECHO" to create a file
+echo "This is my file" > sanket.py
+
+5. Using "NANO" 
+nano yash.java
+Write the data
+Control + X
+Press Y (to save)
+Enter
+
+To see the data inside a file in a random order
+sort kastro1.txt (or) sort -r kastro1.txt
+
+COMPARE command
+To see the differences between any two files
+
+FIND command
+To search by file name
+sudo find / -name kastro5.txt
+
+To search by file location
+sudo find /home/ec2-user/ -name raut3.txt
+
+To print the line numbers and its data
+cat -n kastro1.txt
+
+To print the data in reverse order
+tac kastro1.txt
+
+COPY command
+cp kastro1.txt kastro2.txt
+
+cat kastro1.txt raut1.txt > kastro3.txt
+
+cp kastro1.txt /home/ec2-user/kastro/
+
+cp -r dir1/* dir2/
+
+HEAD and TAIL commands
+HEAD command will display the content from top
+ head kastro1.txt ---> It will show you the first 10 lines in a file
+
+head -n 5 kastro1.txt
+
+TTAIL command will display the content from bottom
+
+tail kastro1.txt ---> It will show you the last 10 lines in a file
+
+tail -n 3 kastro1.txt
+
+Task: Find out how to see from a specific line to another specific line
+I want to see the data from line 3 to line 7 from top in a specific file
+I want to see the data from line 3 to line 7 from bottom in a specific file
+
+WORDCOUNT
+wc linux.py
+1 (number of lines)  6 (number of words) 29 (number of characters) linux.py
+
+GREP
+Global Regular Expression Print
+It is used to search for a word in a file
+
+grep 'deployment' kastro.txt
+Note: The above command is case sensitive
+
+To ignore case sensitivity
+grep -i 'deployment' kastro.txt
+
+To search for a word in all the files available
+grep -i 'deployment'*
+
+grep -i -n 'deployment' kastro.txt
+
+SED Command
+SED - Stream Editor
+It is used to replace the text without opening the file
+
+SUBSTITUTE
+sed 's/deployment/deploy/' kastro.txt
+Note: The above command will only replace the word in the frontend. But when we do "cat <filename>" you will see the original word only
+
+Task: Find the command to replace the word permanently
+
+DELETE
+sed '$d' kastro.txt
+Note: The above command will only delete the word in the frontend. But when we do "cat <filename>" you will see the original word only
+
+Task: Find the command to delete the word permanently
+
+Find the command to delete the lines permanently
+from specific line to specific line (line 6 to line 10 from top, line 6 to line 10 from bottom)
+
+To print the content from speicifc line to another specific line
+sed -n '2,5p'  kastro.txt
+
+FILE PERMISSIONS
+CHMOD command
+
+File permissions in Linux are categorized into 3 ways;
+	1. User permissions 	- u
+	2. Group permissions	- g
+	3. Others permissions	- o
+
+Each category is again divided into 3 permissions
+read			- r
+write		- w
+execute		- x
+
+rw-r--r--
+Users category ----> read, write are available
+Group category ----> only read permission is available
+Others category ----> only read permission is available
+
+Add ---> + 
+Remove ---> -
+
+chmod u+x kastro.txt
+chmod g+w kastro.txt
+chmod g+x kastro.txt
+chmod o+x kastro.txt
+chmod o+w kastro.txt
+chmod o-r kastro.txt
+chmod g-r kastro.txt
+chmod u-r kastro.txt
+chmod u-rw kastro.txt
+chmod u+rw kastro.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

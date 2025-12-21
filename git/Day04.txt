@@ -1,0 +1,113 @@
+Git & GitHub - Day 04
+=========================
+
+to delete the branch remotely
+git push origin --delete train (Remote deletion)
+
+git branch -D train (Local deletion)
+
+To recover the deleted branch, when its deleted from the remote as well;
+git reflog
+git checkout -b train ebe9e24
+
+Note: ebe9e24 is the commit id where the branch and files are available
+
+Task: Recover the deleted branch from remote, when its deleted using git bash terminal
+
+Recovering the deleted branch remotely;
+
+Pull Request;
+	i) Remote
+		I want to merge the files from one branch (dth) to another branch (master)
+
+Master branch --- master.txt --- no content
+dth branch --- master.txt --- content is available
+
+GIT PULL
+To get the changes, which were made in the remote, from remote repo to local repo
+
+Note: without pulling the changes available in remote repo, we cannot push the changes to remote repo
+
+PULL Vs CLONE
+Clone will get the complete code from remote to local
+Pull will get only the changes available in remote
+
+FORKING A REPO
+Project -----> Clone ----> Push to your account
+Without cloning we can get the complete code from one repo to another repo
+
+BRANCH MERGING
+
+GIT MERGE
+git merge train
+Updating f1ebbc0..fd9a32c
+Fast-forward
+ movies1.java | 0
+ movies2.java | 0
+ movies3.java | 0
+ movies4.java | 0
+ movies5.java | 0
+ train1.py    | 0
+ train2.py    | 0
+ train3.py    | 0
+ train4.py    | 0
+ train5.py    | 0
+ 10 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 movies1.java
+ create mode 100644 movies2.java
+ create mode 100644 movies3.java
+ create mode 100644 movies4.java
+ create mode 100644 movies5.java
+ create mode 100644 train1.py
+ create mode 100644 train2.py
+ create mode 100644 train3.py
+ create mode 100644 train4.py
+ create mode 100644 train5.py
+
+GIT REBASE
+git rebase train
+Successfully rebased and updated refs/heads/movies.
+
+
+🔹 Git Merge
+Combines changes from one branch into another using a merge commit
+Maintains the branch history as it happened (non-linear history)
+Good for preserving context, especially in shared/team branches
+Easier and safer because it does not rewrite commit history'
+
+🔹 Git Rebase
+Moves or “rebases” commits on top of another branch
+Linear and cleaner history
+Rewrites commit hashes → not safe for branches already shared with others
+
+MERGE CONFLICTS
+Dev1 --- branch 1 --- code.txt --- Java code
+Dev2 --- branch 2 --- code.txt --- Python code
+
+
+Master Branch --- code.txt --- Hello World
+Dev1 --- branch 1 --- code.txt --- Java code
+Dev2 --- branch 2 --- code.txt --- Python code
+
+After merging;
+Master Branch --- code.txt --- Java code (Hello World is overwritten)
+Branch 1 --- code.txt --- java code
+Branch 2 --- code.txt --- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
